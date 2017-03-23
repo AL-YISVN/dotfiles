@@ -1,0 +1,100 @@
+
+@font-face {
+  font-family: 'Hack-Regular';
+  src: url('Hack-Regular.ttf') format('truetype');
+}
+
+.wrapper {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container {
+  width: 33%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  float: left;
+}
+
+body {
+  font-family: 'Hack-Regular', sans-serif;
+
+  background-color: #202020;
+  color: #dc5a42;
+
+}
+
+main {
+  padding-left: 10vw;
+  padding-right: 10vw;
+  padding-top: 4vw;
+}
+
+
+
+hr {
+  color: #b9b9b9;
+}
+
+
+
+.container {
+  font-size: 16px;
+
+  width: 27%;
+  height: 350px;
+  margin-top: 8vw;
+  margin-right: 2vw;
+  margin-left: 2vw;
+  margin-bottom: 4vh;
+
+  float: left;
+}
+
+.containerHeader {
+  padding-left: 10px;
+  padding-top: 10px;
+
+  font-size: 18px;
+
+  height: 30px;
+  font-weight: bold;
+  color: #b9b9b9;
+}
+
+
+.containerContent {
+  background-color: #202020;
+
+  padding: 10px;
+
+  min-height: 300px;
+}
+
+.containerContent ul {
+  list-style: none;
+  padding: unset;
+}
+
+.containerContent > ul li {
+
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
+
+.containerContent > ul li:hover {
+  background-color: #2e2e2e;
+}
+
+.containerContent > ul > li a {
+  color: #686868;
+
+  text-decoration: none;
+}
+
+.containerContent > ul > li a:hover {
+  text-decoration: underline;
+}

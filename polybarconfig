@@ -1,0 +1,135 @@
+[colors]
+
+bgcolor			= #101010
+fgcolor			= #B9B9B9
+color8			= #525252
+color15			= #F7F7F7
+
+[bar/main]
+
+bottom			= true
+monitor			= eDP-1
+
+;bar height and width as percent or px
+width 			= 100%
+height 			= 32
+
+;bar border and rounded edges
+radius 			= 0.0
+border-size		= 0
+border-color		= #00000000
+border-top-size		= 2
+border-top-color	= ${colors.fgcolor}
+
+;modules in center are placed in exact center
+fixed-center		= true
+
+;primary bg and fg colors
+background		= ${colors.bgcolor}
+foreground		= ${colors.fgcolor}
+
+;spaces at begininning and end of bar
+padding			= 1
+
+;spaces before and after each module
+module-margin		= 1
+
+;fonts, second number is a vertical offset
+font-0			= Hack:size=14;3
+font-1			= FontAwesome:size=14;3
+
+;module listing, each has own section
+modules-left		= i3
+modules-center		= wireless
+modules-right		= battery date
+
+;position and padding for systray icons
+tray-position		= right
+tray-padding		= 2
+
+
+
+
+[module/i3]
+type			= internal/i3
+format			= <label-state> <label-mode>
+index-sort		= true
+wrapping-scroll		= false
+strip-wsnumbers		= true
+
+label-mode-padding	= 2
+label-mode-foreground	= ${colors.fgcolor}
+label-mode-background	= ${colors.color8}
+
+; focused = Active workspace on focused monitor
+label-focused		= %name%
+label-focused-padding	= 1
+label-focused-background = ${colors.fgcolor}
+label-focused-foreground = ${colors.bgcolor}
+
+; unfocused = Inactive workspace on any monitor
+label-unfocused		= %name%
+label-unfocused-padding	= 1
+label-unfocused-background = ${colors.bgcolor}
+label-unfocused-foreground = ${colors.fgcolor}
+
+; urgent = Workspace with urgency hint set
+label-urgent		= %name%
+label-urgent-padding	= 1
+label-urgent-foreground	= ${colors.bgcolor}
+label-urgent-background	= ${colors.color8}
+
+
+
+
+[module/date]
+type = internal/date
+
+interval = 1.0
+
+date = %A, %B %d
+time = %r
+
+format =  <label>
+
+label = %date% %time%
+
+[module/battery]
+type = internal/battery
+
+full-at = 99
+battery = BAT0
+adapter = ADP1
+
+poll-interval = 5
+
+time-format = %H:%M
+
+format-charging = <ramp-capacity> <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+format-full = <ramp-capacity> <label-full>
+
+label-charging = %percentage%%  (%time%)
+label-discharging = %percentage%%  (%time%)
+label-full = %percentage%% (Full)
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+[module/wireless]
+type = internal/network
+interface = wlan0
+
+interval = 1.0
+accumulate-stats = true
+
+
+format-connected =  <label-connected>
+format-disconnected =  <label-disconnected>
+
+label-connected = %local_ip% on %essid% %{F#686868} [ %downspeed% | %upspeed% ] %{F-}
+label-disconnected = Not Connected
+label-disconnected-foreground = ${colors.color8}

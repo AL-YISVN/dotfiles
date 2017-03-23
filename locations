@@ -1,0 +1,12 @@
+.Xresources	->	/.Xresources
+i3config	->	/.config/i3/config
+polybarconfig	->	/.config/polybar/config
+.xinitrc	->	/.xinitrc
+wallpaper.png	->	/Pictures/wallpaper.png
+xorg.conf	->	/etc/X11/xorg.conf
+supress-console	->	/etc/sysctl.d/20-quiet-printk.conf
+vimrc		->	~/.vimrc
+
+scripts/
+polybar-start	->	/usr/local/bin/polybar-start
+notify-send.py  ->  ~/.weechat/python/autoload/notify-send.py

@@ -1,0 +1,240 @@
+set $mod Mod4
+
+#system font:
+font pango:Hack 16
+
+#floating window modifier:
+floating_modifier $mod
+
+#window borders:
+for_window [class="^.+"] border pixel 3
+
+gaps inner 20
+
+############
+#          #
+# BINDINGS #
+#          #
+############
+
+#open a terminal:
+bindsym $mod+Return 	exec i3-sensible-terminal
+
+#kill focused window:
+bindsym $mod+Shift+q	kill
+
+#program launcher (rofi)
+bindsym $mod+d		exec rofi -show run
+
+#window switcher (rofi)
+bindsym $mod+Tab	exec rofi -show window
+
+#reload configuration file
+bindsym $mod+Shift+c	reload
+
+#restart i3 in place
+bindsym $mod+Shift+r	restart
+
+#exit i3
+bindsym $mod+Shift+e	exec "i3-nagbar -t warning -m 'Exit i3?' -b 'Exit' 'i3-msg exit'"
+
+#change focus
+bindsym	$mod+h		focus left
+bindsym	$mod+j		focus down
+bindsym	$mod+k		focus up
+bindsym	$mod+l		focus right
+
+#or with arrow keys
+bindsym	$mod+Left	focus left
+bindsym	$mod+Down	focus down
+bindsym	$mod+Up		focus up
+bindsym	$mod+Right	focus right
+
+#move focused window
+bindsym $mod+Shift+h	move left
+bindsym $mod+Shift+j	move down
+bindsym $mod+Shift+k	move up
+bindsym $mod+Shift+l	move right
+
+#or with arrow keys
+bindsym $mod+Shift+Left	 move left
+bindsym $mod+Shift+Down	 move down
+bindsym $mod+Shift+Up	 move up
+bindsym $mod+Shift+Right move right
+
+#change split orientation
+bindsym $mod+v		split toggle
+
+#toggle fullscreen
+bindsym $mod+f		fullscreen
+
+#change container layout
+bindsym $mod+s		layout stacking
+bindsym $mod+w		layout tabbed
+bindsym $mod+e		layout toggle split
+
+#toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+#switch focus tiling / floating
+bindsym $mod+space	focus mode_toggle
+
+#focus parent container
+bindsym $mod+a		focus parent
+
+#focus child container
+bindsym $mod+z		focus child
+
+#scratchpad
+bindsym $mod+m		scratchpad show
+bindsym $mod+Shift+m	move scratchpad
+
+#Lock Screen
+#Not set up yet
+
+#PulseAudio Controls
+bindsym XF86AudioRaiseVolume	exec --no-startup-id	'pactl set-sink-volume 1 +5%'
+bindsym XF86AudioLowerVolume	exec --no-startup-id	'pactl set-sink-volume 1 -5%'
+bindsym XF86AudioMute		exec --no-startup-id	'pactl set-sink-mute 1 toggle'
+
+#Brightness Controls
+bindsym XF86MonBrightnessUp	exec --no-startup-id	xbacklight -inc 5
+bindsym XF86MonBrightnessDown	exec --no-startup-id	xbacklight -dec 5
+
+#Keyboard Backlight Controls
+#Not Installed Yet
+
+#Media Player Controls
+#Not Installed Yet
+
+##############
+#            #
+# WORKSPACES #
+#            #
+##############
+
+#Workspace Variables
+set $ws1	1:I
+set $ws2	2:II
+set $ws3	3:III
+set $ws4	4:IV
+set $ws5	5:V
+set $ws6	6:VI
+set $ws7	7:VII
+set $ws8	8:VIII
+set $ws9	9:IX
+set $ws0	10:X
+
+#Switch to a workspace
+bindsym $mod+1		workspace $ws1
+bindsym $mod+2		workspace $ws2
+bindsym $mod+3		workspace $ws3
+bindsym $mod+4		workspace $ws4
+bindsym $mod+5		workspace $ws5
+bindsym $mod+6		workspace $ws6
+bindsym $mod+7		workspace $ws7
+bindsym $mod+8		workspace $ws8
+bindsym $mod+9		workspace $ws9
+bindsym $mod+0		workspace $ws0
+
+#move focused container to a workspace
+bindsym $mod+Shift+1	move container to workspace $ws1
+bindsym $mod+Shift+2	move container to workspace $ws2
+bindsym $mod+Shift+3	move container to workspace $ws3
+bindsym $mod+Shift+4	move container to workspace $ws4
+bindsym $mod+Shift+5	move container to workspace $ws5
+bindsym $mod+Shift+6	move container to workspace $ws6
+bindsym $mod+Shift+7	move container to workspace $ws7
+bindsym $mod+Shift+8	move container to workspace $ws8
+bindsym $mod+Shift+9	move container to workspace $ws9
+bindsym $mod+Shift+0	move container to workspace $ws0
+
+#workspace assignments
+assign [class="Firefox"]	$ws2
+assign [title="cmus.*"]		$ws0
+assign [class="discord"]	$ws9
+assign [instance="__wc"]    $ws0
+
+for_window [class="feh"]	floating enable
+for_window [instance="__sp"]	move scratchpad
+for_window [instance="__nm"]	floating enable, move absolute position 870 px 1090 px
+
+#########
+#       #
+# MODES #
+#       #
+#########
+
+mode "resize" {
+	bindsym h		resize shrink	width	10px or 10ppt
+	bindsym j		resize grow	height	10px or 10ppt
+	bindsym k		resize shrink	height	10px or 10ppt
+	bindsym l		resize grow	width	10px or 10ppt
+
+	bindsym Left		resize shrink	width	10px or 10ppt
+	bindsym Down		resize grow	height	10px or 10ppt
+	bindsym Up		resize shrink	height	10px or 10ppt
+	bindsym Right		resize grow	width	10px or 10ppt
+
+	#exit resize mode
+	bindsym Return		mode "default"
+	bindsym Escape		mode "default"
+}
+
+bindsym $mod+r		mode "resize"
+
+##########
+#        #
+# COLORS #
+#        #
+##########
+
+set $colorbg	#101010
+set $colorfg	#b9b9b9
+set $color0	#101010
+set $color1	#7c7c7c
+set $color2	#8e8e8e
+set $color3	#a0a0a0
+set $color4	#686868
+set $color5	#747474
+set $color6	#868686
+set $color7	#b9b9b9
+set $color8	#525252
+set #color15	#f7f7f7
+
+#Window Class		Border		Background	Text		Indicator	Child Border
+client.focused		$colorfg	$colorbg	$colorfg	$color3		$colorfg
+client.focused_inactive	$color4		$colorbg	$color3		$colorfg	$color4
+client.unfocused	$color8		$colorbg	$color3		$colorfg	$color8
+
+#################
+#               #
+# STARTUP ITEMS #
+#               #
+#################
+
+#Reload the Xresources database
+exec_always --no-startup-id	xrdb $HOME/.Xresources
+
+#Start polybar
+exec_always --no-startup-id	polybar-start
+
+#Wallpaper
+exec_always --no-startup-id	feh --bg-scale /root/Pictures/wallpaper.png
+
+#Smooth Transitions
+exec_always --no-startup-id	compton -fr6
+
+#Launch Polybar (Not installed yet)
+#exec_always --no-startup-id	launchpoly.sh
+
+#Tap shift as esc, Rshift as backslash
+exec --no-startup-id		xcape -t 200 -e 'Shift_L=Escape;Shift_R=backslash'
+
+#Start a terminal in the scratchpad
+exec --no-startup-id		urxvt -name __sp
+
+exec --no-startup-id        urxvt -name __wc -e weechat
+
+#Start dunst to handle notify-send requests
+exec_always --no-startup-id        dunst

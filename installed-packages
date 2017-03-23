@@ -1,0 +1,55 @@
+i3 (i3-wm, i3status, i3lock, dunst, suckless-tools)
+rxvt-unicode-256color
+vim
+rofi
+compton
+fonts-font-awesome
+feh
+git
+cmake (for polybar)
+g++ (for polybar)
+pkg-config (for polybar)
+
+(for polybar):
+	cmake
+	g++
+	pkg-config
+	libcairo2-dev (need to run apt-get update to install)
+	libxcb-xkb-dev
+	libxcb-randr0-dev
+	xcb-proto
+	libxcb-emwh-dev
+	libxcb-iccm4-dev
+	libxcb-image0-dev
+	libxcb-util0-dev
+	python-xcbgen
+	wireless-tools
+	libiw-dev
+	libasound2-dev
+	libxcb-xrm-dev
+
+(for i3-gaps)
+	autoconf
+	libxcb1-dev
+	libxcb-keysyms1-dev
+	libpango1.0-dev
+	libxcb-util0-dev
+	libxcb-icccm4-dev
+	libyajl-dev
+	libstartup-notification0-dev
+	libxcb-randr0-dev
+	libev-dev
+	libxcb-cursor-de
+	libxcb-xinerama0-dev
+	libxkbcommon-dev
+	libxkbcommon-x11-dev
+
+xbacklight
+zsh
+oh-my-zsh (from github through wget)
+fortune
+cowsay
+xcape
+
+weechat
+notify-send (weechat plugin from github)

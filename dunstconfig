@@ -1,0 +1,46 @@
+[global]
+    font = Hack 14
+    alignment = right
+    allow_markup = yes
+    plain_text = no
+    format = "<b>%s</b> %b"
+    sort = yes
+    indicate_hidden = yes
+    bounce_freq = 0
+    show_age_threshold = 60
+    word_wrap = yes
+    ignore_newline = no
+    geometry = "1000x10-20-52"
+    shrink = yes
+    transparency = 30
+    show_indicators = yes
+    line_height = 32
+    notification_height = 100
+    separator_height = 2
+    padding = 10
+    horizontal_padding = 20
+
+    startup_notification = true
+
+[frame]
+    width = 1
+    color = "#b9b9b9"
+
+[shortcuts]
+    close = q
+    close_all = shift+q
+
+[urgency_low]
+    background = "#101010"
+    foreground = "#b9b9b9"
+    timeout = 10
+
+[urgency_normal]
+    background = "#101010"
+    foreground = "#b9b9b9"
+    timeout = 0
+
+[urgency_critical]
+    background = "#b9b9b9"
+    foreground = "#101010"
+    timeout = 0
