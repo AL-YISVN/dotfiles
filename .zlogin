@@ -13,5 +13,8 @@ export PATH=/usr/games:/usr/local/games:$PATH
 #and fix i3-sensible-terminal:
 export TERMINAL=urxvt
 
+#export editor variable
+export EDITOR=vim
+
 #and display a startup splash:
 fortune fortunes | cowsay
