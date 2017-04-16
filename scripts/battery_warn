@@ -1,0 +1,12 @@
+#!/bin/sh
+
+battery_path=$(upower -e | grep BAT)
+battery_state=$(upower -i $battery_path | grep state | awk '{ print $2 }')
+battery_percent=$(upower -i $battery_path | grep percentage | awk '{ print $2 }')
+percent_num=$(echo $battery_percent | grep -oP '[^%]+')
+
+if [ $battery_state = "discharging" -a $percent_num -le 10 ]; then
+    notify-send 'low battery:' "$battery_percent"
+fi
+
+exit 0

@@ -234,7 +234,7 @@ exec --no-startup-id		xcape -t 200 -e 'Shift_L=Escape;Shift_R=backslash'
 #Start a terminal in the scratchpad
 exec --no-startup-id		urxvt -name __sp
 
-exec --no-startup-id        urxvt -name __wc -e weechat
+#exec --no-startup-id        urxvt -name __wc -e weechat
 
 #Start dunst to handle notify-send requests
 exec_always --no-startup-id        dunst

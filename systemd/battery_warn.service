@@ -1,0 +1,6 @@
+[Unit]
+Description=Display a battery warning
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/battery_warn

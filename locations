@@ -10,3 +10,8 @@ vimrc		->	~/.vimrc
 scripts/
 polybar-start	->	/usr/local/bin/polybar-start
 notify-send.py  ->  ~/.weechat/python/autoload/notify-send.py
+battery_warn    ->  /usr/loca/bin/battery_warn
+
+systemd/
+battery_warn.timer  ->  /etc/systemd/system/battery_warn.timer
+battery_warn.service -> /etc/systemd/system/battery_warn.service
